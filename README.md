@@ -1,5 +1,5 @@
 ## angular-message-socket
-__A WebSocket wrapper for Angular with Akka-style semantics.
+A WebSocket wrapper for Angular with Akka-style semantics.
 
 
 ## Usage
