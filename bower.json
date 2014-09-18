@@ -1,0 +1,24 @@
+{
+  "name": "angular-message-socket",
+  "version": "0.1.0",
+  "description": "A WebSocket wrapper for Angular with Akka-style semantics.",
+  "author": "Dan Baumann",
+  "license": "MIT",
+  "homepage": "https://github.com/dbaumann/angular-message-socket",
+  "main": "./src/coffee/MessageSocket.coffee",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test*",
+    "demo*",
+    "gruntFile.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "angular": "~1.x"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.x"
+  }
+}
