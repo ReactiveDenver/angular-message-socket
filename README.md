@@ -38,7 +38,7 @@ myAppModule.factory("myService", function(MessageSocket) {
 
 ### Configuration
 ```javascript
-module.config(function($logProvider, MessageSocketProvider) {
+myAppModule.config(function($logProvider, MessageSocketProvider) {
   // enable console messages
   $logProvider.debugEnabled(true);
   
