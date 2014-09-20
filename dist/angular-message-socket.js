@@ -96,7 +96,7 @@
                       return cancel();
                     });
                     return _this.deferreds.forEach(function(deferred) {
-                      return deferred.reject(new Error("[MessageSocket.AskTimedOut] Ask timeout for '" + _this.askMessage[MESSAGE_TYPE] + "' elapsed after " + _this.responseTimeout + " ms"));
+                      return deferred.reject(new Error(("[MessageSocket.AskTimedOut] Ask timeout for '" + _this.askMessage[MESSAGE_TYPE] + "'") + (" elapsed after " + _this.responseTimeout + " ms")));
                     });
                   };
                 })(this), this.responseTimeout);
@@ -197,11 +197,9 @@
                   }
                 };
               })(this);
-              this.onError = (function(_this) {
-                return function(message) {
-                  return $log.debug("MessageSocket encountered an error", message);
-                };
-              })(this);
+              this.onError = function(message) {
+                return $log.debug("MessageSocket encountered an error", message);
+              };
               this.connect(url);
             }
 

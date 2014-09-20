@@ -13,9 +13,10 @@
     return {
       /**
        * Creates a message handler.
-       *
+       * 
        * @param {function} messageFilter The filter which must pass for the message to be handled.
        * @param {object} data The data attribute to use in the data given by the handler.
+       * @todo Permit data parameter to be a function (request -> response)
        */
       when: function(messageFilter, data) {
         handlers.push([messageFilter, data]);
