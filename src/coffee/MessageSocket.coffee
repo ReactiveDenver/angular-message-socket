@@ -92,6 +92,10 @@ angular.module("dbaumann.message-socket", [])
             unless($logProvider.debugEnabled())
               "Your connection to this application is about to close."
 
+        close: ->
+          $log.debug("MessageSocket closed.")
+          @socket.close()
+
         constructor: (url) ->
           @handlers = {}
           @outbox = new BoundedQueue(DELAYED_QUEUE_SIZE)

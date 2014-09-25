@@ -137,6 +137,11 @@
               })(this);
             };
 
+            MessageSocket.prototype.close = function() {
+              $log.debug("MessageSocket closed.");
+              return this.socket.close();
+            };
+
             function MessageSocket(url) {
               this.receive = __bind(this.receive, this);
               this.handlers = {};
