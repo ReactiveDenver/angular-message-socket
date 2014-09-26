@@ -118,7 +118,7 @@
               this.socket.onclose = (function(_this) {
                 return function(message) {
                   _this.connected = false;
-                  if (!message.wasClean) {
+                  if (!_this.closeRequested && !message.wasClean) {
                     return _this.reconnect(message);
                   }
                 };
@@ -139,6 +139,7 @@
 
             MessageSocket.prototype.close = function() {
               $log.debug("MessageSocket closed.");
+              this.closeRequested = true;
               return this.socket.close();
             };
 

@@ -83,7 +83,7 @@ angular.module("dbaumann.message-socket", [])
           @socket.onmessage = @onMessage
           @socket.onclose = (message) =>
             @connected = false
-            if(!message.wasClean) then @reconnect(message)
+            if(!@closeRequested && !message.wasClean) then @reconnect(message)
           @socket.onerror = @onError
           @send = (message) -> @socket.send(message)
 
@@ -94,6 +94,7 @@ angular.module("dbaumann.message-socket", [])
 
         close: ->
           $log.debug("MessageSocket closed.")
+          @closeRequested = true
           @socket.close()
 
         constructor: (url) ->
